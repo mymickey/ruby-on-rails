@@ -1,0 +1,13 @@
+<a href="<%= new_article_path%>">new</a>
+<ul>
+  <% @articles.each do |item| %>
+    <li>
+       <a href="/articles/<%= item.id %>"><%= item.title %></a>
+       <a href='<%= edit_article_path(item) %>'>edit</a>
+       <%= link_to 'Destroy',article_path(item) , method: "delete" ,data:{confirm:"Are you sure"} %> 
+       <p>
+        <%= item.text %>
+       </p>
+    </li>
+  <% end %>  
+</ul>
